@@ -1,8 +1,10 @@
 import React from 'react';
+import Form from './Form.jsx';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const App = () => {
   return (
-    <div>Hello user Sava</div>
+    <Form/>
   )
 };
 
