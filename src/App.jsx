@@ -1,7 +1,7 @@
 import React from 'react';
 
-const App = ()=>{
-  return(
+const App = () => {
+  return (
     <div>Hello user Sava</div>
   )
 };
