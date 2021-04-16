@@ -4,10 +4,6 @@ import './index.scss';
 import App from './App.jsx';
 
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+const rootElement = document.querySelector('#root');
 
+ReactDOM.render(<App />, rootElement)

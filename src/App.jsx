@@ -1,21 +1,19 @@
 import React from 'react';
-import Form from './Form.jsx';
-//import axios from 'axios';
+import { Provider } from 'react-redux';
+import UsersList from './users/components/UsersList';
+import SearchForm from './users/components/SearchForm';
+import store from './store';
 
 
 const App = () => {
-
-  //console.log(axios);
-
   return (
-    <div className="app">
-      <Form />
-    </div>
 
-
+    <Provider store={store}>
+      <SearchForm/>
+      <UsersList />
+    </Provider>
 
   )
-};
-
+}
 
 export default App;
