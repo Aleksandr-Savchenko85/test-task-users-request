@@ -1,16 +1,50 @@
 import React from 'react';
 
-const Form =()=>{
-    return(<>
-        <button type="button" class="btn btn-primary">Primary</button>
-<button type="button" class="btn btn-secondary">Secondary</button>
-<button type="button" class="btn btn-success">Success</button>
-<button type="button" class="btn btn-danger">Danger</button>
-<button type="button" class="btn btn-warning">Warning</button>
-<button type="button" class="btn btn-info">Info</button>
-<button type="button" class="btn btn-light">Light</button>
-<button type="button" class="btn btn-dark">Dark</button>
-</>
+const Form = () => {
+    
+    return (
+   
+       
+        <form className="login-form">
+            <h1 className="form-title">Create user</h1>
+            <div className="form-control">
+                <label className="form-label" htmlFor="name">Name</label>
+                <input
+                    className="form-input"
+                    type="name"
+                    id="name"
+                    name="name"
+                    placeholder="enter name"
+                   
+                />
+            </div>
+            <div className="form-control">
+                <label className="form-label" htmlFor="surname">Surname</label>
+                <input
+                    className="form-input"
+                    type="text"
+                    id="surname"
+                    name="surname"
+                    placeholder="enter surname"
+                  
+                />
+            </div>
+            <div className="form-control">
+                <label className="form-label" htmlFor="desc">Description</label>
+                <input
+                    className="form-input"
+                    type="text"
+                    id="desc"
+                    name="description"
+                    placeholder="enter description"
+                   
+                />
+            </div>
+            <button className="submit-button" type="submit" >Submit</button>
+            <div className="error-text"></div>
+        </form>
+    
+        
     )
 };
 

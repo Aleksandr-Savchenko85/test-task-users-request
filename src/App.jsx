@@ -1,10 +1,19 @@
 import React from 'react';
 import Form from './Form.jsx';
-import 'bootstrap/dist/css/bootstrap.min.css';
+//import axios from 'axios';
+
 
 const App = () => {
+
+  //console.log(axios);
+
   return (
-    <Form/>
+    <div className="app">
+      <Form />
+    </div>
+
+
+
   )
 };
 
