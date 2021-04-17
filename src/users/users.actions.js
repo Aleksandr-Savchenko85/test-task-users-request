@@ -1,10 +1,7 @@
-// import { GO_PREV, GO_NEXT, GET_USERS } from "./users.actions";
+
 import { GO_PREV, GO_NEXT, GET_USERS, ADD_USERS } from './actionTypes'
-//import axios from 'axios';
 import { getUsersList, addUser } from './components/gateway';
-// export const GO_PREV = "USER/PREV";
-// export const GO_NEXT = "USER/NEXT";
-// export const GET_USERS = "GET_USERS";
+
 export const CREATE_USERS = "GET_USERS";
 export const UPDATE_USERS = "GET_USERS";
 export const DELETE_USERS = "GET_USERS";

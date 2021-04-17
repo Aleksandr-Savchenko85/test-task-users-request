@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import { connect } from "react-redux";
 import * as userActions from "../users.actions";
@@ -7,36 +7,36 @@ import User from "./User";
 import Pagination from "./Pagination";
 
 const UsersList = ({ goNext, goPrev }) => {
-    const dispatch = useDispatch();
-    const users = useSelector(state => state.users.users);
-    const currentPage = useSelector(state => state.users.currentPage);
-    console.log(currentPage);
+  const dispatch = useDispatch();
+  const users = useSelector(state => state.users.users);
+  const currentPage = useSelector(state => state.users.currentPage);
+  console.log(currentPage);
   let limitPerPage = 5;
   let startPage = currentPage * limitPerPage;
   let endPage = startPage + limitPerPage
   const showUsersList = users.slice(startPage, endPage);
 
   useEffect(() => {
-      dispatch(getUsers());
-}, [dispatch]);
+    dispatch(getUsers());
+  }, [dispatch]);
 
-    return (
-      <div className="block">
-        <Pagination
-          goNext={goNext}
-          goPrev={goPrev}
-          currentPage={currentPage}
-          totalItems={users.length}
-          itemsPerPage={limitPerPage}
+  return (
+    <div className="block">
+      <Pagination
+        goNext={goNext}
+        goPrev={goPrev}
+        currentPage={currentPage}
+        totalItems={users.length}
+        itemsPerPage={limitPerPage}
 
-        />
-        <ul className="users">
-          {showUsersList.map((user) => (
-            <User key={user.id} {...user} />
-          ))}
-        </ul>
-      </div>
-    );
+      />
+      <ul className="users">
+        {showUsersList.map((user) => (
+          <User key={user.id} {...user} />
+        ))}
+      </ul>
+    </div>
+  );
 }
 
 const mapDispatch = {

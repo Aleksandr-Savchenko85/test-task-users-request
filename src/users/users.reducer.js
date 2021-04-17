@@ -1,8 +1,3 @@
-// import { GO_PREV, GO_NEXT, GET_USERS} from "./users.actions";
-//import {getUsersList} from './components/gateway';
-//import axios from 'axios';
-
-//const baseURL = "http://77.120.241.80:8811/api/users";
 
 import { GO_PREV, GO_NEXT, GET_USERS, ADD_USERS, UPDATE_USERS, DELETE_USERS } from './actionTypes'
 
