@@ -15,6 +15,12 @@ export const getUsersList = async () => {
 };
 
 export const addUser =()=>{
+
+}
+export const updateUser =()=>{
+    
+}
+export const deleteUser =()=>{
     
 }
 
