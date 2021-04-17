@@ -1,10 +1,10 @@
 
-import { GO_PREV, GO_NEXT, GET_USERS, ADD_USERS } from './actionTypes'
+import { GO_PREV, GO_NEXT, GET_USERS, ADD_USERS, UPDATE_USERS } from './actionTypes'
 import { getUsersList, addUser } from './components/gateway';
 
-export const CREATE_USERS = "GET_USERS";
-export const UPDATE_USERS = "GET_USERS";
-export const DELETE_USERS = "GET_USERS";
+/* export const CREATE_USERS = "GET_USERS";
+export const UPDATE_USERS = "UPDATE_USERS";
+export const DELETE_USERS = "DELETE_USERS"; */
 
 export const goPrev = () => {
   return {
@@ -34,6 +34,7 @@ export const getUsers = () => {
   }
 };
 
+
 export const createUser = ({
   name,
   surname,
@@ -52,6 +53,28 @@ export const createUser = ({
       desc
     }).then(user => {
       dispatch(createUserAction(user))
+    })
+  }
+};
+
+export const updateUser = ({
+  name,
+  surname,
+  desc
+}) => {
+  const updateUserAction = user => {
+    return {
+      type: UPDATE_USERS,
+      payload: { user },
+    }
+  }
+  return dispatch => {
+    updateUser({
+      name,
+      surname,
+      desc
+    }).then(user => {
+      dispatch(updateUserAction(user))
     })
   }
 };

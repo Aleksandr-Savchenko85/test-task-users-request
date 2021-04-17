@@ -30,6 +30,16 @@ const usersReducer = (state = initialState, action) => {
         ...state,
         users: [...state.users, action.payload.user]
       };
+    case UPDATE_USERS:
+      return {
+        ...state,
+        users: [...state.users, action.payload.user]
+      };
+    case DELETE_USERS:
+      return {
+        ...state,
+        users: [...state.users, action.payload.user]
+      };
     default:
       return state;
   }
