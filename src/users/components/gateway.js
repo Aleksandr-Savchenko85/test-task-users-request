@@ -24,7 +24,7 @@ export const addUser = async ({
     let response = {};
 
     try {
-        response = await axios.get(url,
+        response = await axios.post(url,
             {
                 name,
                 surname,
