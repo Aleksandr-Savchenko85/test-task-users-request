@@ -1,8 +1,8 @@
-import { GO_PREV, GO_NEXT, GET_USERS } from "./users.actions";
+import { GO_PREV, GO_NEXT,GET_USERS} from "./users.actions";
 //import {getUsersList} from './components/gateway';
-import axios from 'axios';
+//import axios from 'axios';
 
-const baseURL = "http://77.120.241.80:8811/api/users";
+//const baseURL = "http://77.120.241.80:8811/api/users";
 
 
 
@@ -11,7 +11,7 @@ const baseURL = "http://77.120.241.80:8811/api/users";
 
  const initialState = {
 
-  users: [{}],
+  users: [],
   currentPage: 0,    // watch first page by index
 }; 
 
@@ -23,12 +23,18 @@ const usersReducer = (state = initialState, action) => {
         currentPage: state.currentPage - 1,
       };
 
-
     case GO_NEXT:
       return {
         ...state,
         currentPage: state.currentPage + 1,
       };
+
+      case GET_USERS:
+        return{
+          ...state,
+
+
+        };
     default:
       return state;
   }

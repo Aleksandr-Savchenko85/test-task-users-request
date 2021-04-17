@@ -1,5 +1,6 @@
 
-
+//import axios from 'axios';
+import { getUsersList } from './components/gateway';
 export const GO_PREV = "USER/PREV";
 export const GO_NEXT = "USER/NEXT";
 export const GET_USERS = "GET_USERS";
@@ -16,9 +17,8 @@ export const goNext = () => {
   };
 };
 
-export const getUsers =()=>{
-  return{
-    type: GET_USERS,
-  };
+export const getUsers = () => {
+  return getUsersList()
+
 };
 

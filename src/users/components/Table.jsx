@@ -1,17 +1,18 @@
-import React, { useState, useEffect } from "react";
+import React, {useState, useEffect} from "react";
+import { getUsersList } from "./gateway";
 //import axios from 'axios';
-import {getExceptionsOrders} from './gateway';
+//import {getExceptionsOrders} from './gateway';
 
 
 const Table = () => {
-    const [persons, setPersons] = useState([])
+     const [persons, setPersons] = useState([])
     
  
 
-    useEffect(() => {
-        getExceptionsOrders()
+     useEffect(() => {
+        getUsersList()
         
-    }, []);
+    }, [setPersons]); 
 
     
     return (

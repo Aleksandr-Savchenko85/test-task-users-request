@@ -3,7 +3,6 @@ import { Provider } from 'react-redux';
 import UsersList from './users/components/UsersList';
 import SearchForm from './users/components/SearchForm';
 import store from './store';
-import Table from './users/components/Table'
 
 
 

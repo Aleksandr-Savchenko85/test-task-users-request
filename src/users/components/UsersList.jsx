@@ -3,17 +3,17 @@ import { connect } from "react-redux";
 import * as userActions from "..//users.actions";
 import User from "./User";
 import Pagination from "./Pagination";
-import {getExceptionsOrders} from './gateway';
+import {getUsersList} from './gateway';
 
 
-const UsersList=({ users, currentPage, goNext, goPrev }) =>{
+const UsersList=({ users, currentPage, goNext, goPrev, getUsers }) =>{
   let  itemsPerPage = 5;
   let startPage = currentPage *  itemsPerPage;
   let endPage = startPage + 5
   const showUsersList = users.slice(startPage, endPage);
 
   useEffect(() => {
-    getExceptionsOrders()
+    getUsersList()
     
 }, []);
 
@@ -43,6 +43,7 @@ const mapState = (state) => {
 const mapDispatch = {
   goNext: userActions.goNext,
   goPrev: userActions.goPrev,
+  getUsers: userActions.getUsers,
 };
 
 const connector = connect(mapState, mapDispatch);

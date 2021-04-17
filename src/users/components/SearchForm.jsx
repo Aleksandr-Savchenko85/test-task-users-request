@@ -38,7 +38,7 @@ const SearchForm = () => {
                    
                 />
             </div>
-            <button className="submit-button" type="submit" >Submit</button>
+            <button className="submit-button" type="submit" >Create</button>
             <div className="error-text"></div>
         </form>
     

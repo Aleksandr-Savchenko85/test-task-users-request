@@ -84,9 +84,20 @@ body {
   background-color: black;
   color:white;
   letter-spacing: 2px;
-  
- 
-  
+    
+}
+
+.delete-btn{
+ float: right;
+ color: aliceblue;
+ border: 1px solid black;
+ background-color: black;
+ border-radius: 12px;
+ cursor: pointer;
+   
+}
+.delete-btn:focus{
+  outline-style: none;
 }
 
 .color-letter{
@@ -153,5 +164,4 @@ form {
   margin: 8px 0;
   text-align: center;
 }
-
 
