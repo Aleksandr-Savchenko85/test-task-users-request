@@ -7,9 +7,10 @@ body {
   display: flex;
   flex-direction: column;
   height: 100vh;
-  background: #b92b27;
-  background: -webkit-linear-gradient(to right, #1565C0, #b92b27); 
-  background: linear-gradient(to right, #1565C0, #b92b27); 
+  background: #20002c;  
+  background: -webkit-linear-gradient(to left, #cbb4d4, #20002c); 
+  background: linear-gradient(to left, #cbb4d4, #20002c); 
+
 }
 
 #root {
@@ -78,12 +79,14 @@ body {
 .sp{
   display: block;
   height:20px;
-  border-radius: 10px;
+  border-radius: 5px;
   margin-top: 2px;
   background-color: black;
   color:white;
   letter-spacing: 2px;
-  text-align: center;
+  
+ 
+  
 }
 
 .color-letter{
