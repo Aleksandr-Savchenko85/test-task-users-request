@@ -1,8 +1,9 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { connect } from "react-redux";
 import * as userActions from "..//users.actions";
 import User from "./User";
 import Pagination from "./Pagination";
+import {getExceptionsOrders} from './gateway';
 
 
 const UsersList=({ users, currentPage, goNext, goPrev }) =>{
@@ -10,6 +11,11 @@ const UsersList=({ users, currentPage, goNext, goPrev }) =>{
   let startPage = currentPage *  itemsPerPage;
   let endPage = startPage + 5
   const showUsersList = users.slice(startPage, endPage);
+
+  useEffect(() => {
+    getExceptionsOrders()
+    
+}, []);
 
     return (
       <div className="block">

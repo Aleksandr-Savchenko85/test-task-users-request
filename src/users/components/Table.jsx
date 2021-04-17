@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import axios from 'axios';
+//import axios from 'axios';
+import {getExceptionsOrders} from './gateway';
 
 
 const Table = () => {
@@ -8,12 +9,9 @@ const Table = () => {
  
 
     useEffect(() => {
-        axios.get("http://77.120.241.80:8811/api/users").then(responce => {
-            const persons = responce.data;
-            setPersons(persons)
-
-        })
-    }, [setPersons]);
+        getExceptionsOrders()
+        
+    }, []);
 
     
     return (
