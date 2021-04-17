@@ -23,8 +23,10 @@ const SearchForm = () => {
         setName(value)
         setSurName(value)
         setDesc(value)
+        console.log(name);
 
     };
+    
 
 
     return (
