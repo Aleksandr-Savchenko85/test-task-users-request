@@ -1,12 +1,13 @@
 import axios from 'axios';
 
-const baseURL = "http://77.120.241.80:8811/api/users";
+const baseURL = 'http://77.120.241.80:8811/api';
 
 export const getUsersList = async () => {
-    const url = baseURL;
+    const url = `${baseURL}/users`;
     let response = {};
+
     try {
-        response = axios.get(url)
+        response = await axios.get(url)
     } catch (error) {
         console.log('Failed fetching exceptions orders');
         throw error;
@@ -14,14 +15,15 @@ export const getUsersList = async () => {
     return response.data;
 };
 
-export const addUser =()=>{
+export const addUser = () => {
+    
 
 }
-export const updateUser =()=>{
-    
+export const updateUser = () => {
+
 }
-export const deleteUser =()=>{
-    
+export const deleteUser = () => {
+
 }
 
 

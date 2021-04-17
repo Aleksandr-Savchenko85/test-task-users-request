@@ -9,7 +9,6 @@ const User = (props) => {
             <span className="user__surname sp"><span className="color-letter">Surname: </span>{props.surname}</span>
             <span className="user__desc sp"><span className="color-letter">Description: </span>{props.desc}</span>
         </li>
-
     )
 }
 
