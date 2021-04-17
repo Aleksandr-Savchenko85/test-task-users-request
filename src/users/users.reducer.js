@@ -4,9 +4,9 @@
 
 //const baseURL = "http://77.120.241.80:8811/api/users";
 
-import { GO_PREV, GO_NEXT, GET_USERS } from './actionTypes'
+import { GO_PREV, GO_NEXT, GET_USERS, ADD_USERS, UPDATE_USERS, DELETE_USERS } from './actionTypes'
 
- const initialState = {
+const initialState = {
   users: [],
   currentPage: 0,    // watch first page by index
 };
@@ -25,11 +25,16 @@ const usersReducer = (state = initialState, action) => {
         currentPage: state.currentPage + 1,
       };
 
-      case GET_USERS:
-        return {
-          ...state,
-          users: action.payload.usersList
-        };
+    case GET_USERS:
+      return {
+        ...state,
+        users: action.payload.usersList
+      };
+    case ADD_USERS:
+      return {
+        ...state,
+        users: [...state.users, action.payload.user]
+      };
     default:
       return state;
   }

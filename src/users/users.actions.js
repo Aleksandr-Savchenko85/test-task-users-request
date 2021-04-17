@@ -1,5 +1,5 @@
 // import { GO_PREV, GO_NEXT, GET_USERS } from "./users.actions";
-import { GO_PREV, GO_NEXT, GET_USERS } from './actionTypes'
+import { GO_PREV, GO_NEXT, GET_USERS, ADD_USERS } from './actionTypes'
 //import axios from 'axios';
 import { getUsersList } from './components/gateway';
 // export const GO_PREV = "USER/PREV";
@@ -36,4 +36,26 @@ export const getUsers = () => {
       })
   }
 };
+
+export const createUser = ({
+  name,
+  surname,
+  desc
+}) => {
+  const createUserAction = usersList => {
+    return {
+      type: ADD_USERS,
+      payload: { usersList },
+    }
+  }
+  return dispatch => {
+    createUser({
+      name,
+      surname,
+      desc
+    }).then(user => {
+      dispatch(createUserAction(user))
+    })
+  }
+}
 
