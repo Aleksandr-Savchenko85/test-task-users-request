@@ -1,9 +1,14 @@
-import { GO_PREV, GO_NEXT, GET_USERS, ADD_USERS, UPDATE_USERS, DELETE_USERS } from './actionTypes'
-import { getUsersList, addUser } from './components/gateway';
-
-/* export const CREATE_USERS = "GET_USERS";
-export const UPDATE_USERS = "UPDATE_USERS";
-export const DELETE_USERS = "DELETE_USERS";  */
+import {
+  GO_PREV,
+  GO_NEXT,
+  GET_USERS,
+  ADD_USER,
+  UPDATE_USER,
+  DELETE_USER,
+  SET_CURRENT_USER,
+  CLEAR_CURRENT_USER,
+} from './actionTypes';
+import { getUsersList, addUser, deleteUser, updateUser } from '../api/gateway';
 
 //----GO NEXT/GO PREV ACTIONS----
 
@@ -16,6 +21,19 @@ export const goPrev = () => {
 export const goNext = () => {
   return {
     type: GO_NEXT,
+  };
+};
+
+export const setCurrentUser = (userId) => {
+  return {
+    type: SET_CURRENT_USER,
+    payload: { userId }
+  };
+};
+
+export const clearCurrentUser = () => {
+  return {
+    type: CLEAR_CURRENT_USER,
   };
 };
 
@@ -39,7 +57,6 @@ export const getUsers = () => {
 
 //----ADD ACTION-----
 
-
 export const createUser = ({
   name,
   surname,
@@ -47,7 +64,7 @@ export const createUser = ({
 }) => {
   const createUserAction = user => {
     return {
-      type: ADD_USERS,
+      type: ADD_USER,
       payload: { user },
     }
   }
@@ -64,19 +81,21 @@ export const createUser = ({
 
 //----UPDATE ACTION----
 
-export const updateUser = ({
+export const editUser = ({
+  id,
   name,
   surname,
   desc
 }) => {
   const updateUserAction = user => {
     return {
-      type: UPDATE_USERS,
+      type: UPDATE_USER,
       payload: { user },
     }
   }
   return dispatch => {
     updateUser({
+      id,
       name,
       surname,
       desc
@@ -88,21 +107,16 @@ export const updateUser = ({
 
 //----DELETE ACTION----
 
-export const deleteUser = ({
-  userId
-}) => {
-  const deleteUserAction = userId => {
+export const removeUser = (id) => {
+  const deleteUserAction = users => {
     return {
-      type: DELETE_USERS,
-      payload: { userId },
+      type: DELETE_USER,
+      payload: { users },
     }
   }
   return dispatch => {
-    deleteUser({
-      userId
-    }).then(userId => {
-      dispatch(deleteUserAction(userId))
+    deleteUser(id).then(users => {
+      dispatch(deleteUserAction(users))
     })
   }
 };
-

@@ -2,6 +2,7 @@ import axios from 'axios';
 
 const baseURL = 'http://77.120.241.80:8811/api';
 
+// ---FETCH USERS----
 export const getUsersList = async () => {
     const url = `${baseURL}/users`;
     let response = {};
@@ -15,23 +16,16 @@ export const getUsersList = async () => {
 };
 
 // ---CREATE USER----
-
 export const addUser = async ({
     name,
     surname,
     desc
-
 }) => {
     const url = `${baseURL}/users`;
     let response = {};
 
     try {
-        response = await axios.post(url,
-            {
-                name,
-                surname,
-                desc
-            })
+        response = await axios.post(url, {name, surname, desc})
     } catch (error) {
         console.log('Failed add user');
         throw error;
@@ -39,26 +33,23 @@ export const addUser = async ({
     return response.data;
 };
 
-//---UPDATE USER---
-
+// ---UPDATE USER---
 export const updateUser = async ({
-    userId,
+    id,
     name,
     surname,
     desc
-
 }) => {
-    const url = `${baseURL}/users${userId}`;
+    const url = `${baseURL}/user/${id}`;
     let response = {};
 
     try {
         response = await axios.put(url,
-            {
-                userId,
-                name,
-                surname,
-                desc
-            })
+    {
+            name,
+            surname,
+            desc
+        })
     } catch (error) {
         console.log('Failed update user');
         throw error;
@@ -66,26 +57,16 @@ export const updateUser = async ({
     return response.data;
 };
 
-//---DELETE USER---
-
-export const deleteUser = async ({
-    userId,
-
-}) => {
-    const url = `${baseURL}/users${userId}`;
+// ---DELETE USER---
+export const deleteUser = async (userId) => {
+    const url = `${baseURL}/user/${userId}`;
     let response = {};
 
     try {
         response = await axios.delete(url)
-
     } catch (error) {
         console.log('Failed add user');
         throw error;
     }
     return response.data;
 };
-
-
-
-
-
