@@ -5,7 +5,7 @@ const User = (props) => {
     return (
 
         <li className="user">
-            <button className="delete-btn edit-btn" onClick={() => console.log('Edit user')}>edit</button>
+            <button className="delete-btn edit-btn" onClick={props.showForm}>edit</button>
             <button className="delete-btn" onClick={() => console.log("Delete user")}>delete</button>
             <span className="user__id sp"> <span className="color-letter">ID: </span> {props.id}</span >
             <span className="user__name sp"><span className="color-letter">Name: </span>{props.name}</span>

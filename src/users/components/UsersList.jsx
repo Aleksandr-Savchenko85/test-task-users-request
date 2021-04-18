@@ -6,7 +6,7 @@ import { getUsers } from '../users.actions';
 import User from "./User";
 import Pagination from "./Pagination";
 
-const UsersList = ({ goNext, goPrev }) => {
+const UsersList = ({ goNext, goPrev, showForm }) => {
   const dispatch = useDispatch();
   const users = useSelector(state => state.users.users);
   const currentPage = useSelector(state => state.users.currentPage);
@@ -32,7 +32,7 @@ const UsersList = ({ goNext, goPrev }) => {
       />
       <ul className="users">
         {showUsersList.map((user) => (
-          <User key={user.id} {...user} />
+          <User showForm={showForm} key={user.id} {...user} />
         ))}
       </ul>
     </div>

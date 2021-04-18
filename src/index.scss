@@ -114,7 +114,7 @@ body {
    
 }
 .edit-btn{
-  left: 610px;
+  left: 650px;
   
 }
 .delete-btn:focus{
@@ -144,7 +144,7 @@ form {
   padding: 16px;
   box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
   border-radius: 15px;
-  margin: 45px;
+  margin: 65px;
   
 
 }
@@ -192,11 +192,15 @@ form {
 .submit-button:hover{
   color: white;
 }
-
-
-.error-text {
-  color: red;
-  margin: 8px 0;
-  text-align: center;
+.clouse-form-update{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 900;
+  width: 20px;
+  margin-left: 250px;
+  
 }
+
+
 

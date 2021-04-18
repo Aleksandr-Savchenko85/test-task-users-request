@@ -1,35 +1,16 @@
-import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { createUser } from '..//users.actions';
+import React from 'react';
 
-const SearchForm = () => {
-    const [name, setName] = useState("");
-    const [surname, setSurName] = useState("");
-    const [desc, setDesc] = useState("");
-    const dispatch = useDispatch();
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        dispatch(createUser({
-            name,
-            surname,
-            desc,
+const FormUpdate = ({isOpen, hideForm}) => {
 
-        }))
+    if (!isOpen) {
+        return null
     }
-    const handleChange = event => {
-        const { name, surname, desc, value } = event.target;
-        setName(value)
-        setSurName(value)
-        setDesc(value)
-
-    };
-
-
-
-    return (
+      
+       return (
         <form className="login-form">
-            <h1 className="form-title">Create user</h1>
+            <button className="clouse-form-update" onClick={hideForm}>X</button>
+            <h1 className="form-title">update user</h1>
             <div className="form-control">
                 <label className="form-label" htmlFor="name">Name</label>
                 <input
@@ -38,7 +19,7 @@ const SearchForm = () => {
                     id="name"
                     name="name"
                     placeholder="enter name"
-                    onChange={handleChange}
+                    
 
                 />
             </div>
@@ -50,7 +31,7 @@ const SearchForm = () => {
                     id="surname"
                     name="surname"
                     placeholder="enter surname"
-                    onChange={handleChange}
+                    
 
                 />
             </div>
@@ -62,11 +43,11 @@ const SearchForm = () => {
                     id="desc"
                     name="desc"
                     placeholder="enter description"
-                    onChange={handleChange}
+                 
 
                 />
             </div>
-            <button className="submit-button" type="submit" onClick={handleSubmit} >Create</button>
+            <button className="submit-button" type="submit" >Update</button>
         </form>
 
 
@@ -75,4 +56,4 @@ const SearchForm = () => {
 
 
 
-export default SearchForm;
+export default FormUpdate;
