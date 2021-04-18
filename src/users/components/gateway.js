@@ -14,6 +14,8 @@ export const getUsersList = async () => {
     return response.data;
 };
 
+// ---CREATE USER----
+
 export const addUser = async ({
     name,
     surname,
@@ -37,7 +39,7 @@ export const addUser = async ({
     return response.data;
 };
 
-
+//---UPDATE USER---
 
 export const updateUser = async ({
     userId,
@@ -63,6 +65,8 @@ export const updateUser = async ({
     }
     return response.data;
 };
+
+//---DELETE USER---
 
 export const deleteUser = async ({
     userId,
