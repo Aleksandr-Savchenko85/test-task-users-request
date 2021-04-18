@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getUsers, goNext, goPrev } from '../../redux/users.actions';
 import User from "./User";

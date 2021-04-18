@@ -189,9 +189,11 @@ form {
   font-weight: 700;
   cursor: pointer;
 }
+
 .submit-button:hover{
   color: white;
 }
+
 .clouse-form-update{
   display: flex;
   justify-content: center;
@@ -205,6 +207,7 @@ form {
   margin-bottom: -20px;
  
 }
+
 .clouse-form-update:focus{
   outline: none;
 }
