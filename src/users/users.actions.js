@@ -91,7 +91,7 @@ export const updateUser = ({
 export const deleteUser = ({
   userId
 }) => {
-  const deleteUserAction = user => {
+  const deleteUserAction = userId => {
     return {
       type: DELETE_USERS,
       payload: { userId },
@@ -100,8 +100,8 @@ export const deleteUser = ({
   return dispatch => {
     deleteUser({
       userId
-    }).then(user => {
-      dispatch(deleteUserAction(user))
+    }).then(userId => {
+      dispatch(deleteUserAction(userId))
     })
   }
 };

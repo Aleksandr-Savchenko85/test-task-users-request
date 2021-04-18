@@ -38,7 +38,7 @@ const usersReducer = (state = initialState, action) => {
     case DELETE_USERS:
       return {
         ...state,
-        users: [...state.users, action.payload.user]
+        users: [...state.users, userId]
       };
     default:
       return state;
