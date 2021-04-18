@@ -37,19 +37,6 @@ export const clearCurrentUser = () => {
   };
 };
 
-export const setCurrentUser = (userId) => {
-  return {
-    type: SET_CURRENT_USER,
-    payload: { userId }
-  };
-};
-
-export const clearCurrentUser = () => {
-  return {
-    type: CLEAR_CURRENT_USER,
-  };
-};
-
 //----GET ACTION-----
 
 export const getUsers = () => {
@@ -117,6 +104,7 @@ export const editUser = ({
     })
   }
 };
+
 //----DELETE ACTION----
 
 export const removeUser = (id) => {

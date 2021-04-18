@@ -45,7 +45,7 @@ const usersReducer = (state = initialState, action) => {
     case ADD_USER:
       return {
         ...state,
-        users: action.payload.users
+        users: [...state.users, action.payload.user]
       };
     case UPDATE_USER: {
       const index = state.users.findIndex(user => user.id === action.payload.user.id);
@@ -57,14 +57,13 @@ const usersReducer = (state = initialState, action) => {
 
       return {
         ...state,
-        users: [...state.users]
-
+        users: copyUsers
       };
     }
     case DELETE_USER:
       return {
         ...state,
-        users: copyUsers
+        users: action.payload.users
       };
     default:
       return state;
