@@ -28,7 +28,7 @@ const SearchForm = () => {
 
 
     return (
-        <form className="login-form">
+        <form className="login-form" onChange={handleChange}>
             <h1 className="form-title">Create user</h1>
             <div className="form-control">
                 <label className="form-label" htmlFor="name">Name</label>
@@ -38,7 +38,7 @@ const SearchForm = () => {
                     id="name"
                     name="name"
                     placeholder="enter name"
-                    onChange={handleChange}
+                    //onChange={handleChange}
 
                 />
             </div>
@@ -49,8 +49,8 @@ const SearchForm = () => {
                     type="text"
                     id="surname"
                     name="surname"
-                    placeholder="enter surname"
-                    onChange={handleChange}
+                     placeholder="enter surname"
+                    // onChange={handleChange}
 
                 />
             </div>
@@ -62,7 +62,7 @@ const SearchForm = () => {
                     id="desc"
                     name="desc"
                     placeholder="enter description"
-                    onChange={handleChange}
+                    //onChange={handleChange}
 
                 />
             </div>
