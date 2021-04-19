@@ -65,7 +65,7 @@ export const deleteUser = async (userId) => {
     try {
         response = await axios.delete(url)
     } catch (error) {
-        console.log('Failed add user');
+        console.log('Failed delete user');
         throw error;
     }
     return response.data;
